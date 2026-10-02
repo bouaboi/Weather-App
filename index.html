@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="app">
+      <div id="mainBg"></div>
+      <nav class="sidebar">
+        <ul>
+          <li>
+            <a href="#home">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#cities">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Cities</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#favorites">
+              <i class="fa-solid fa-star"></i>
+              <span>Favorites</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#settings">
+              <i class="fa-solid fa-gear"></i>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <section id="home" class="view active">
+          <div class="top-bar">
+            <div class="search">
+              <input type="text" id="homeSearch" placeholder="Search city..." />
+
+              <button type="button" id="homeSearchBtn" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="weather-main">
+            <div class="current-weather">
+              <div class="location">
+                <i class="fa-solid fa-location-dot"></i>
+                <span id="currentLocation"></span>
+
+                <button id="favoriteBtn" type="button">
+                  <i class="fa-regular fa-star"></i>
+                </button>
+              </div>
+
+              <div class="temperature">
+                <span id="temperature"></span>
+                <span id="temperatureUnit">°C</span>
+              </div>
+
+              <div class="weather-condition">
+                <img
+                  id="weatherIcon"
+                  src="img/icons/partly-cloudy-day.svg"
+                  alt=""
+                />
+                <span id="weatherCondition"></span>
+              </div>
+
+              <div class="high-low">
+                <span>H: <strong id="highTemperature"></strong></span>
+                <span>L: <strong id="lowTemperature"></strong></span>
+              </div>
+            </div>
+
+            <div class="weather-details">
+              <div class="detail">
+                <i class="fa-solid fa-wind"></i>
+                <span>Wind</span>
+                <strong id="wind"></strong>
+              </div>
+
+              <div class="detail">
+                <i class="fa-solid fa-droplet"></i>
+                <span>Humidity</span>
+                <strong id="humidity"></strong>
+              </div>
+
+              <div class="detail">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Pressure</span>
+                <strong id="pressure"></strong>
+              </div>
+
+              <div class="detail">
+                <i class="fa-solid fa-eye"></i>
+                <span>Visibility</span>
+                <strong id="visibility"></strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="forecast">
+            <h2>5-Day Forecast</h2>
+
+            <div id="forecastList" class="forecast-list"></div>
+          </div>
+        </section>
+
+        <section id="cities" class="view">
+          <div class="top-bar">
+            <h1>Cities</h1>
+
+            <div class="search">
+              <input type="text" id="citySearch" placeholder="Search city..." />
+
+              <button type="button" id="citySearchBtn" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="city-list">
+            <div>
+              <strong></strong>
+              <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+
+            <button class="favorite-btn">
+              <i class="fa-regular fa-star"></i>
+            </button>
+          </div>
+        </section>
+
+        <!-- Favorites -->
+        <section id="favorites" class="view">
+          <div class="top-bar">
+            <h1>Favorites</h1>
+          </div>
+
+          <div class="favorite-list"></div>
+
+          <div class="empty-favorites">
+            <i class="fa-regular fa-star"></i>
+
+            <h2>No Favorite Cities</h2>
+
+            <p>Add cities to your favorites and they will appear here.</p>
+
+            <button id="goToCities">Explore Cities</button>
+          </div>
+        </section>
+
+        <!-- Settings -->
+        <section id="settings" class="view">
+          <div class="top-bar">
+            <h1>Settings</h1>
+          </div>
+
+          <!-- Appearance -->
+          <div class="settings-group">
+            <h2>Appearance</h2>
+
+            <div class="setting-item">
+              <span>Dark Mode</span>
+
+              <label class="theme-toggle">
+                <input type="checkbox" id="themeToggle" />
+                <span>Dark</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="settings-group">
+            <h2>Default City</h2>
+
+            <div class="setting-item">
+              <span>City</span>
+
+              <select id="defaultCity">
+                <option value="algiers">Algiers</option>
+              </select>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
