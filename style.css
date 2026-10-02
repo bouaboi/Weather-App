@@ -810,6 +810,10 @@ main {
     padding: 18px 20px;
   }
 
+  .current-weather {
+    align-items: first baseline;
+  }
+
   .empty-favorites {
     margin-top: 20px;
     padding: 35px 20px;
